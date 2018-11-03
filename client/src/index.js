@@ -11,3 +11,19 @@ import devs from './users'
 
 console.log('DEVS:', devs)
 
+
+
+import Vue from 'vue'
+
+// import api from './js/api'
+
+import App from './js/App'
+
+import './index.less'
+
+
+new Vue({
+    el: '#app',
+    render: h => h(App),
+})
+

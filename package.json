@@ -4,8 +4,7 @@
   "description": "",
   "main": "index.js",
   "dependencies": {
-    "webpack-cli": "^3.1.2",
-    "webpack": "^4.24.0"
+    "vue": "^2.5.17"
   },
   "devDependencies": {
     "@babel/core": "^7.1.2",
@@ -23,7 +22,14 @@
     "pug": "^2.0.3",
     "pug-loader": "^2.4.0",
     "pug-plain-loader": "^1.0.0",
-    "raw-loader": "^0.5.1"
+    "raw-loader": "^0.5.1",
+    "style-loader": "^0.23.1",
+    "vue": "^2.5.17",
+    "vue-loader": "^15.4.2",
+    "vue-style-loader": "^4.1.2",
+    "vue-template-compiler": "^2.5.17",
+    "webpack": "^4.24.0",
+    "webpack-cli": "^3.1.2"
   },
   "scripts": {
     "front:clear": "rm -rf client/dist",

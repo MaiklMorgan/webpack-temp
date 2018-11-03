@@ -14,7 +14,7 @@ import path from 'path'
 
 
 import HTMLWebpackPlugin from 'html-webpack-plugin'
-// import VueLoaderPlugin from 'vue-loader/lib/plugin'
+import VueLoaderPlugin from 'vue-loader/lib/plugin'
 import CopyWebpackPlugin from 'copy-webpack-plugin'
 import ExtractTextPlugin from 'extract-text-webpack-plugin'
 
@@ -151,6 +151,21 @@ export default ({mode='production'}) => {
                         use: ['raw-loader', 'pug-plain-loader']
                     }
                 ],
+            }, {
+                test: /\.vue$/,
+                use: [{
+                    loader: 'vue-loader',
+                    options: {
+                        loaders: {
+                            js: 'babel-loader'
+                        },
+                        babel: {
+                            babelrc: false,
+                            presets: ['@babel/preset-env', { 'modules': false }],
+                            // plugins: ['@babel/plugin-transform-destructuring', ['@babel/plugin-proposal-object-rest-spread', { 'useBuiltIns': true }]],
+                        },
+                    },
+                }/*, 'babel-loader'*/],
             }],
         },
         plugins: [
@@ -186,6 +201,20 @@ export default ({mode='production'}) => {
             extractCSS,
             extractLESS,
             
+            new VueLoaderPlugin(),
+            
         ],
+        resolve: {
+            extensions: ['*', '.js', '.vue', '.json'],
+            alias: {
+                'vue$': 'vue/dist/vue.esm.js',
+                // docRoot: __dirname + '/../../document root',
+                // app: `${__dirname}/app`,
+            },
+            // modules: [
+            //     'node_modules',
+            //     path.resolve(__dirname, 'src'),
+            // ],
+        },
     }
 }
