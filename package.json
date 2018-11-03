@@ -7,9 +7,28 @@
     "webpack-cli": "^3.1.2",
     "webpack": "^4.24.0"
   },
-  "devDependencies": {},
+  "devDependencies": {
+    "@babel/core": "^7.1.2",
+    "@babel/node": "^7.0.0",
+    "@babel/preset-env": "^7.1.0",
+    "@babel/register": "^7.0.0",
+    "copy-webpack-plugin": "^4.6.0",
+    "extract-text-webpack-plugin": "^3.0.2",
+    "html-webpack-plugin": "^3.2.0",
+    "path": "^0.12.7"
+  },
   "scripts": {
+    "front:clear": "rm -rf client/dist",
+    "webpack": "npm run front:clear && webpack --config=config/webpack.config.babel.js",
+    "front:dev": "npm run webpack -- --env.mode=development --watch",
+    "front:prod": "npm run webpack -- --env.mode=production",
     "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "babel": {
+    "presets": [
+      "@babel/preset-env"
+    ],
+    "plugins": []
   },
   "keywords": [],
   "author": "",
