@@ -1,2 +1,2 @@
 # webpack-temp
-webpack
+webpack by slaawwa
