@@ -8,10 +8,9 @@
     export default {
         data() {
             return {
-                name: 'Vue WORKED!!!',
+                name: 'Vue !!!',
             }
         },
     }
     
 </script>
-
